@@ -32,3 +32,9 @@ module.exports.addServer = function(options) {
     builders.push(server(options));
     return module.exports;
 }
+
+module.exports.addTest = function(options) {
+    var test = require('./test/test-builder');
+    builders.push(test(options));
+    return module.exports;
+}

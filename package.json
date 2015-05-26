@@ -1,5 +1,7 @@
 {
-  "dependencies": {},
+  "dependencies": {
+    "gulp-jasmine": "^2.0.1"
+  },
   "devDependencies": {
     "babel": "^4.6.0",
     "connect-livereload-safe": "0.0.5",
@@ -19,22 +21,7 @@
   },
   "scripts": {
     "start": "gulp serve",
-    "test": "jest"
-  },
-  "jest": {
-    "collectCoverage": true,
-    "testPathIgnorePatterns": [
-      "/__tests__/[^/]*/.+"
-    ],
-    "testPathDirs": [
-      "src"
-    ],
-    "scriptPreprocessor": "<rootDir>/preprocessor.js",
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react",
-      "<rootDir>/node_modules/react-tools",
-      "<rootDir>/node_modules/reflux"
-    ]
+    "test": "gulp test"
   },
   "jspm": {
     "directories": {

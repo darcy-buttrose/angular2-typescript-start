@@ -14,4 +14,5 @@ tasks
       port: 8888,
       verbose: true
    })
+    .addTest()
    .build(gulp);

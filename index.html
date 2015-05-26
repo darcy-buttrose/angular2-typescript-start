@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8"/>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+   <meta name="apple-mobile-web-app-capable" content="YES"/>
+   <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <meta name="fragment" content="!" />
+
+   <title>tower</title>
+   <base href="/"></base>
+
+   <link rel="shortcut icon" href="/resources/tower.jpeg" />
+
+   <script src="jspm_packages/github/jmcriffey/bower-traceur-runtime@0.0.88/traceur-runtime.js"></script>
+   <script src="lib/es6-module-loader.src.js"></script>
+   <script src="lib/system.src.js"></script>
+   <script src="config.js"></script>
+   <script src="lib/angular2.dev.js"></script>
+      
+</head>
+
+<body>
+   <second-app>
+      Loading...
+   </second-app>
+
+   <script type="module">
+      System.config({
+         "transpiler": "typescript",
+         "typescriptOptions": {
+          "emitDecoratorMetadata": true
+         }
+      });
+      
+      System.import('./src/ui/app')
+         .then(function(app){
+            app.main();
+         })
+         .catch(function (err){
+            console.error('ERROR: ', err)
+         });
+
+      Promise.all(System.import('./necolas/normalize.css'),
+                  System.import('purecss/build/pure.css!'),
+                  System.import('font-awesome/css/font-awesome.css!'),
+                  System.import('./src/ui/app.css!'))
+         .catch(function (err){
+            console.log('ERROR: ', err)
+         });
+   </script>
+</body>
+
+</html>

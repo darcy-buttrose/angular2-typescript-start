@@ -1,0 +1,66 @@
+{
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^4.6.0",
+    "connect-livereload-safe": "0.0.5",
+    "debounce": "^1.0.0",
+    "del": "^1.1.1",
+    "express": "^4.11.2",
+    "glob": "^4.3.5",
+    "gulp": "^3.8.11",
+    "gulp-util": "^3.0.2",
+    "jspm": "^0.15.5",
+    "morgan": "^1.5.1",
+    "node-notifier": "^4.1.0",
+    "open": "0.0.5",
+    "react": "^0.13.0",
+    "reflux": "^0.2.5",
+    "tiny-lr": "^0.1.5"
+  },
+  "scripts": {
+    "start": "gulp serve",
+    "test": "jest"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "testPathIgnorePatterns": [
+      "/__tests__/[^/]*/.+"
+    ],
+    "testPathDirs": [
+      "src"
+    ],
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-tools",
+      "<rootDir>/node_modules/reflux"
+    ]
+  },
+  "jspm": {
+    "directories": {
+      "lib": "src"
+    },
+    "dependencies": {
+      "css": "github:systemjs/plugin-css@^0.1.0",
+      "font-awesome": "npm:font-awesome@^4.3.0",
+      "necolas/normalize.css": "github:necolas/normalize.css@^3.0.2",
+      "purecss": "npm:purecss@^0.6.0",
+      "text": "github:systemjs/plugin-text@^0.0.2",
+      "typescript": "github:Arnavion/typescript-github@master"
+    },
+    "devDependencies": {
+      "traceur": "github:jmcriffey/bower-traceur@0.0.88",
+      "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.88"
+    },
+    "overrides": {
+      "github:Arnavion/typescript-github@master": {
+        "format": "global",
+        "shim": {
+          "bin/typescript": {
+            "exports": "ts"
+          }
+        }
+      }
+    }
+  }
+}
